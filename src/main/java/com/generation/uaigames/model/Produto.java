@@ -34,7 +34,19 @@ public class Produto {
     @JsonIgnoreProperties("produto") // Ajuste para refletir o relacionamento correto
     private Categoria categoria;
     
-    public Categoria getCategoria() {
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
+    
+    public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
